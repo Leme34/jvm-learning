@@ -6,6 +6,9 @@ import java.io.*;
 
 /**
  * 实现自定义类加载器
+ *
+ * 如何自己手写一个类加载器实现热加载：
+ * https://github.com/modouxiansheng/Doraemon/tree/master/classLoader/src/main/java/com/example
  */
 @ToString
 public class MyClassLoader extends ClassLoader {

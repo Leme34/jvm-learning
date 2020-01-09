@@ -1,4 +1,4 @@
-package com.lee.classloader;
+package com.lee.classloader.demo1;
 
 import lombok.ToString;
 
@@ -62,7 +62,7 @@ public class MyClassLoader extends ClassLoader {
                 InputStream is = new FileInputStream(new File(classFilePath));
                 ByteArrayOutputStream baos = new ByteArrayOutputStream();
         ) {
-            int len = 0;
+            int len;
             while ((len = is.read()) != -1) {
                 baos.write(len);
             }
@@ -79,7 +79,7 @@ public class MyClassLoader extends ClassLoader {
 
         // --------------------调用ClassLoader的loadClass(String className)加载类-----------------
         // TODO 委托给了其父类加载器(系统类加载器)，若父加载器加载不了才会调用自定义类加载器的findClass方法
-        Class<?> clazz = myClassLoader.loadClass("com.lee.classloader.Test");
+        Class<?> clazz = myClassLoader.loadClass("com.lee.classloader.demo1.Test");
         //实例化类对象
         Object obj = clazz.newInstance();
         System.out.println(obj + "，由类加载器 " + obj.getClass().getClassLoader() + " 加载");

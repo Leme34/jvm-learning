@@ -1,4 +1,4 @@
-package com.lee.classloader;
+package com.lee.classloader.demo1;
 
 import lombok.Data;
 
